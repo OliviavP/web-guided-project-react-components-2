@@ -24,13 +24,14 @@ export default function App() {
     // Step 2: Inside the loop, when you find the object whose id matches the id passed in
     //           update the obj.married to the opposite of what it is
 
-    const updatedFriends = friends.map(friend => {
+  const updatedFriends = friends.map(friend => {
       if (friend.id === id) {
         return { ...friend, married: !friend.married };
       } else {
         return friend;
       }
     })
+
     setFriends(updatedFriends);
   }
 
