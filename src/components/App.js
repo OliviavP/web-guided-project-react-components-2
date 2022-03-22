@@ -46,4 +46,6 @@ export default function App() {
  *   hometown: "Wisconsin"
  * }
  * FriendsList(props);
+ * console.log(props.name);
+ * console.log("my age is: " + props.age)
  */
