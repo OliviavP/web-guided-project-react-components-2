@@ -7,7 +7,7 @@ export default function PetsList(props) {
 
   return (
     <div className='list-pets-friends container'>
-      { pets.map(pet => <Pet pet={pet} />) }
+      { pets.map(pet => <Pet pet={pet} key={pet.id} />) }
     </div>
   )
 }
