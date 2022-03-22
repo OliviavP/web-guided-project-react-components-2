@@ -20,7 +20,18 @@ export default function App() {
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
   const changeStatus = (id) => {
-    console.log(id);
+    // Step 1: Write a loop that searches for the correct object to update
+    // Step 2: Inside the loop, when you find the object whose id matches the id passed in
+    //           update the obj.married to the opposite of what it is
+
+    const updatedFriends = friends.map(friend => {
+      if (friend.id === id) {
+        return { ...friend, married: !friend.married };
+      } else {
+        return friend;
+      }
+    })
+    setFriends(updatedFriends);
   }
 
   // STRETCH - Make a helper function that returns
@@ -33,7 +44,7 @@ export default function App() {
       <Search />
       {/* 👉 7- Render the FriendsList component */}
       {/* What prop/props does FriendsList need? */}
-      <FriendsList friends={friends} />
+      <FriendsList friends={friends} changeStatus={changeStatus} />
     </div>
   )
 }

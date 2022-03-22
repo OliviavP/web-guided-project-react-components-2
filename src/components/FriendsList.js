@@ -4,7 +4,7 @@ import Friend from "./Friend";
 
 export default function FriendsList(props) {
   // 👉 2- What data does FriendsList need to do its job? Use destructuring
-  const { friends } = props;
+  const { friends, changeStatus } = props;
   // const friends = props.friends;
 
   return (
@@ -12,7 +12,7 @@ export default function FriendsList(props) {
       {/* 👉 3- We need to loop over the data rendering a Friend as we go */}
       {/* Each friend is going to need a `key` prop and also some other prop with data */}
       { friends.map(friend => {
-          return <Friend friend={friend} key={friend.id} />
+          return <Friend friend={friend} key={friend.id} changeStatus={changeStatus} />
       })}
     </div>
   )
